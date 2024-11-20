@@ -4,4 +4,18 @@
 
 using namespace std;
 
-TimeSeriesGenerator
+TimeSeriesGenerator::TimeSeriesGenerator()
+: seed(0) {
+}
+
+TimeSeriesGenerator::TimeSeriesGenerator(int _seed)
+: seed(_seed) {
+}
+
+void TimeSeriesGenerator::printTimeSeries(const vector<double> timeSeries) {
+    cout << endl;
+    for (int i = 0; i < timeSeries.size(); i++) {
+        cout << timeSeries[i] << " ";
+    }
+    cout << endl;
+}
