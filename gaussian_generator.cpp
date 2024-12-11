@@ -17,7 +17,6 @@ GaussianGenerator::~GaussianGenerator()
 
 vector<double> GaussianGenerator::generateTimeSeries(int size) {
     vector<double> generated_series = vector<double>();
-    //generated_series.reserve(size);
     
     for (int i = 0; i < size; i += 2) {
         double u1 = rand() / static_cast<double>(RAND_MAX);
