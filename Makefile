@@ -8,7 +8,7 @@ CXXFLAGS = -std=c++11 -Wall
 INCLUDES = -Iheaders
 
 # Source files
-SRCS = main.cpp time_series_generator.cpp sin_wave_generator.cpp gaussian_generator.cpp step_generator.cpp time_series_dataset.cpp
+SRCS = main.cpp knn.cpp time_series_generator.cpp sin_wave_generator.cpp gaussian_generator.cpp step_generator.cpp time_series_dataset.cpp
 
 # Object files
 OBJS = $(SRCS:.cpp=.o)

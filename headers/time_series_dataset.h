@@ -13,12 +13,15 @@ private:
     vector<double> data;
     vector<int> labels;
     int maxLength;
-    int numerOfSamples;
+    int numberOfSamples;
 
 public:
     TimeSeriesDataset();
+    TimeSeriesDataset(bool _znormalize, bool _isTrain);
     ~TimeSeriesDataset();
 
+    void addTimeSeries(vector<double> timeSeries);
+    void addTimeSeries(vector<double> timeSeries, int label);
     vector<double> ZNormalization(vector<double>);
     double euclidean_distance(const vector<double>, const vector<double>);
     double dynamic_time_warping(const vector<double>, const vector<double>);

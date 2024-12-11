@@ -6,12 +6,34 @@
 using namespace std;
 
 TimeSeriesDataset::TimeSeriesDataset()
-: znormalize(false), isTrain(false), maxLength(0), numerOfSamples(0)
+: znormalize(false), isTrain(false), maxLength(0), numberOfSamples(0)
+{
+}
+
+TimeSeriesDataset::TimeSeriesDataset(bool _znormalize, bool _isTrain)
+: znormalize(_znormalize), isTrain(_isTrain), maxLength(0), numberOfSamples(0)
 {
 }
 
 TimeSeriesDataset::~TimeSeriesDataset()
 {
+}
+
+void TimeSeriesDataset::addTimeSeries(vector<double> timeSeries)
+{
+    for (const auto& value : timeSeries ) {
+        data.push_back(value);
+    }
+
+}
+
+void TimeSeriesDataset::addTimeSeries(vector<double> timeSeries, int label)
+{
+    for (const auto& value : timeSeries ) {
+        data.push_back(value);
+        labels.push_back(label);
+    }
+
 }
 
 vector<double> TimeSeriesDataset::ZNormalization(vector<double> timeSeries)
@@ -109,7 +131,7 @@ int TimeSeriesDataset::getMaxLength() const
 
 int TimeSeriesDataset::getNumberOfSamples() const
 {
-    return numerOfSamples;
+    return numberOfSamples;
 }
 
 
@@ -144,5 +166,5 @@ void TimeSeriesDataset::setMaxLength(int maxLength)
 
 void TimeSeriesDataset::setNumberOfSamples(int numberOfSamples)
 {
-    this->numerOfSamples = numberOfSamples;
+    this->numberOfSamples = numberOfSamples;
 }
