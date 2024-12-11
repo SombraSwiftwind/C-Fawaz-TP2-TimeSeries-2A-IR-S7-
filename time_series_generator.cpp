@@ -13,9 +13,18 @@ TimeSeriesGenerator::TimeSeriesGenerator(int _seed)
 }
 
 void TimeSeriesGenerator::printTimeSeries(const vector<double> timeSeries) {
-    cout << endl;
-    for (int i = 0; i < timeSeries.size(); i++) {
-        cout << timeSeries[i] << " ";
+    for (const auto& value : timeSeries) {
+        cout << value << " ";
     }
     cout << endl;
+}
+
+// Getters
+int TimeSeriesGenerator::getSeed() {
+    return seed;
+}
+
+// Setters
+void TimeSeriesGenerator::setSeed(int _seed) {
+    seed = _seed;
 }

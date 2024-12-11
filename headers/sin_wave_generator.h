@@ -1,5 +1,5 @@
-#ifndef SIN_WAVE_GENERATOR.H
-#define SIN_WAVE_GENERATOR.H
+#ifndef SIN_WAVE_GENERATOR_H
+#define SIN_WAVE_GENERATOR_H
 
 #include "time_series_generator.h"
 
@@ -13,7 +13,7 @@ private:
     double initial_phase;
 
 public:
-    SinWaveGenerator(/* args */);
+    SinWaveGenerator();
     ~SinWaveGenerator();
 
     vector<double> generateTimeSeries(int size) override;

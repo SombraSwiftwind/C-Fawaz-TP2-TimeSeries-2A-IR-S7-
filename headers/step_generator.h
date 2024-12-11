@@ -7,8 +7,6 @@ using namespace std;
 
 class StepGenerator : public TimeSeriesGenerator
 {
-private:
-    
 public:
     StepGenerator();
     ~StepGenerator();
